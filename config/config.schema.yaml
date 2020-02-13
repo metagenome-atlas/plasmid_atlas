@@ -1,0 +1,26 @@
+$schema: "http://json-schema.org/draft-06/schema#"
+description: Config file
+properties:
+  sampletable:
+    type: string
+    description: path to sample file. With sample names under the Header "Samples"
+    default:  samples.tsv
+  # database_dir:
+  #   type: string
+  #   description: Path where databases are stored
+  mem:
+    description: Memory requirement in GB
+    type: integer
+    default: 70
+  time:
+    description: Expected running time for Vibrant in h
+    type: integer
+    default: 8
+  threads:
+    type: integer
+    default: 8
+
+  
+
+# required:
+#   - database_dir

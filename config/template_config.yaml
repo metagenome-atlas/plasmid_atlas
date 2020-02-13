@@ -1,0 +1,33 @@
+# This file should contain everything to configure the workflow on a global scale.
+# In case of sample based data, it should be complemented by a samples.tsv file that contains
+# one row per sample. It can be parsed easily via pandas.
+
+
+sampletable: "samples.tsv"
+database_dir: "databases"
+
+mem: 70
+time: 8
+threads: 8
+
+
+assembly_threads: 8
+assembly_memory: 250
+
+#Runtime only for cluster execution
+runtime: #in h
+    default: 5
+    assembly: 48
+    long: 24
+
+
+
+# Spades
+#------------
+spades_skip_BayesHammer: true
+spades_use_scaffolds: false # use contigs
+#Comma-separated list of k-mer sizes to be used (all values must be odd, less than 128 and listed in ascending order).
+spades_k: auto
+spades_preset: meta    # meta, ,normal, rna  single end libraries doesn't work for metaspades
+spades_extra: ""
+longread_type: none # [none,"pacbio", "nanopore", "sanger", "trusted-contigs", "untrusted-contigs"]

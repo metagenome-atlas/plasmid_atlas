@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import os,sys
+path= os.path.dirname(__file__)
+
+from snakemake.shell import shell
+
+atlas_folder=sys.argv[1]
+database_dir=sys.argv[2]
+snakemake_args= sys.argv[3:]
+
+shell(
+    "snakemake --config database_dir={database_dir} "
+    "-d {atlas_folder} "
+    "--use-conda --conda-prefix {database_dir}/conda_envs/ "
+    "{snakemake_args}"
+    )
