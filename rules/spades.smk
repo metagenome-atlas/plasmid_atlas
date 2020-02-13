@@ -61,11 +61,11 @@ rule plasmid_spades:
         "logs/benchmarks/plasmids/spades/{sample}.txt"
     params:
         p= lambda wc,input: spades_parameters(wc,input),
-        k = config.get("spades_k", SPADES_K),
+        k = config.get("spades_k", 'auto'),
     log:
         "{sample}/logs/plasmids/spades.log"
     conda:
-        "%s/assembly.yaml" % CONDAENV
+        "../envs/assembly.yaml"
     threads:
         config["assembly_threads"]
     resources:
