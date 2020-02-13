@@ -5,7 +5,7 @@ from workflow_scripts import *
 from snakemake.utils import validate
 
 
-configfile: os.path.join(os.path.dirname(workflow.snakefile),'config/template_config.yaml'), 'config.yaml'
+configfile: os.path.join(os.path.dirname(workflow.snakefile),'config/template_config.yaml')
 validate(config, "config/config.schema.yaml")
 
 
