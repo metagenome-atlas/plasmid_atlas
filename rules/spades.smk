@@ -1,7 +1,7 @@
 
 ASSEMBLY_FRACTIONS=['R1','R2','me','se']
 assembly_preprocessing_steps='QC.errorcorr.merged'
-
+assembly_params=dict()
 assembly_params['spades'] = {'meta':'--meta','normal':''}
 
 def spades_parameters(wc,input):
