@@ -1,5 +1,5 @@
 
-ASSEMBLY_FRACTIONS=['R1','R2','me','se']
+ASSEMBLY_FRACTIONS=['R1','R2','me']
 assembly_preprocessing_steps='QC.errorcorr.merged'
 assembly_params=dict()
 assembly_params['spades'] = {'meta':'--meta','normal':''}
