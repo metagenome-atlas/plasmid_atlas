@@ -9,12 +9,14 @@ configfile: os.path.join(os.path.dirname(workflow.snakefile),'config/template_co
 validate(config, "config/config.schema.yaml")
 
 
+
+
 include: "rules/spades.smk"
 
 
 rule all:
     input:
-        expand("{sample}/plasmids/spades/contigs.fasta",sample=get_all_samples(config["sampletable"])[:2])
+        expand("{sample}/plasmids/spades/contigs.fasta",sample=SAMPLES)
 
 
 

@@ -1,8 +1,13 @@
 
-ASSEMBLY_FRACTIONS=['R1','R2','me']
-assembly_preprocessing_steps='QC.errorcorr.merged'
+
 assembly_params=dict()
 assembly_params['spades'] = {'meta':'--meta','normal':''}
+
+
+ASSEMBLY_FRACTIONS=['R1','R2','me']
+assembly_preprocessing_steps='QC.errorcorr.merged'
+SAMPLES= glob_wildcards(f"{sample}/assembly/reads/{assembly_preprocessing_steps}_{ASSEMBLY_FRACTIONS[0]}.fastq.gz").sample
+
 
 def spades_parameters(wc,input):
     if not os.path.exists("{sample}/assembly/params.txt".format(sample=wc.sample)):
