@@ -17,7 +17,7 @@ assembly_memory: 250
 #Runtime only for cluster execution
 runtime: #in h
     default: 5
-    assembly: 48
+    assembly: 12
     long: 24
 
 
