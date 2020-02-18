@@ -10,7 +10,7 @@ SAMPLES= glob_wildcards(f"{{sample}}/assembly/reads/{assembly_preprocessing_step
 
 
 def spades_parameters(wc,input):
-    if not os.path.exists("{sample}/assembly/params.txt".format(sample=wc.sample)):
+    if not os.path.exists("{sample}/plasmids/spades/params.txt".format(sample=wc.sample)):
 
         params={}
 
