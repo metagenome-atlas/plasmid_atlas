@@ -36,7 +36,7 @@ def spades_parameters(wc,input):
             params['longreads'] = ""
 
 
-        params['preset'] = assembly_params['spades'][config['spades_preset']]
+        params['preset'] =  ' --plasmid '+assembly_params['spades'][config['spades_preset']]
         params['skip_error_correction'] = "--only-assembler" if config['spades_skip_BayesHammer'] else ""
         params['extra'] = config['spades_extra']
 
@@ -77,7 +77,7 @@ rule plasmid_spades:
         mem = config["assembly_memory"],
         time= config["runtime"]["assembly"]
     shell:
-        "spades.py --plasmid"
+        "spades.py "
         " --threads {threads} "
         " --memory {resources.mem} "
         " -o {params.p[outdir]} "
