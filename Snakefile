@@ -16,7 +16,7 @@ include: "rules/spades.smk"
 
 rule all:
     input:
-        expand("{sample}/plasmids/spades/contigs.fasta",sample=SAMPLES)
+        expand("{sample}/plasmids/plasmids.fasta.gz",sample=SAMPLES)
 
 
 

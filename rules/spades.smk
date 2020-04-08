@@ -88,3 +88,15 @@ rule plasmid_spades:
         " {params.p[longreads]} "
         " {params.p[skip_error_correction]} "
         " > {log} 2>&1 "
+
+
+rule rename_plasmids:
+    # standardizes header labels within contig FASTAs
+    input:
+        "{sample}/plasmids/spades/contigs.fasta"
+    output:
+        "{sample}/plasmids/plasmids.fasta.gz"
+    conda:
+        "%s/bbmap.yaml" % CONDAENV
+    shell:
+        "rename.sh in={input} out={output} ow=t prefix={wildcards.sample}_plasmid"
