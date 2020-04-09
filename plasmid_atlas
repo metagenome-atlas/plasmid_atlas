@@ -11,6 +11,7 @@ snakemake_args= sys.argv[3:]
 
 shell(
     "snakemake --config database_dir={database_dir} "
+    " -s {path}/Snakefile "
     "-d {atlas_folder} "
     "--use-conda --conda-prefix {database_dir}/conda_envs/ "
     "{snakemake_args}"
