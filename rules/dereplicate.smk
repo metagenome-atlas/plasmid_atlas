@@ -15,7 +15,7 @@ rule deduplicate:
         "dedupe.sh ow=t"
         " cluster=t pickbestrepresentative "
         " in={params.input}"
-        " out={output.output}"
+        " out={output}"
         " threads={threads}"
         " -Xmx{resources.mem}g"
         " 2> {log} "
