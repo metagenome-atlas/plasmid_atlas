@@ -12,11 +12,14 @@ validate(config, "config/config.schema.yaml")
 
 
 include: "rules/spades.smk"
+include: "rules/dereplicate.smk"
 
 
 rule all:
     input:
-        expand("{sample}/plasmids/plasmids.fasta.gz",sample=SAMPLES)
+        plasmids=expand("{sample}/plasmids/plasmids.fasta.gz",sample=SAMPLES),
+        dereplicated="plasmids/plasmids.deduplicated.fasta.gz"
+
 
 
 
