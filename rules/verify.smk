@@ -40,7 +40,7 @@ rule verify:
         "python {params.script} "
         " -f {input.fasta}"
         " -o {output} "
-        " --hmm input.database"
+        " --hmm {input.database}"
         " -p"
         " -t {threads}"
         " &> {log}"
