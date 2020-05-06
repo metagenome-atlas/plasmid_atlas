@@ -34,6 +34,8 @@ rule verify:
         "logs/benchmark/plasmid/verify.txt"
     output:
         directory("plasmids/verification/")
+    conda:
+        "../envs/verify.yaml"
     shell:
         "python {params.script} "
         " -f {input.fasta}"
