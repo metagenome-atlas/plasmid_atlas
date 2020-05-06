@@ -27,12 +27,15 @@ rule verify:
         fasta= "plasmids/plasmids.deduplicated.fasta",
     log:
         "logs/plasmids/verify.log"
+    params:
+        script= os.path.join(os.path.dirname(workflow.snakefile),
+                             "scrpts/viralveify/viralverify.py")
     benchmark:
         "logs/benchmark/plasmid/verify.txt"
     output:
         directory("plasmids/verification/")
     shell:
-        "../scrpts/viralveify/viralverify.py "
+        "python {params.script} "
         " -f {input.fasta}"
         " -o {output} "
         " --hmm input.database"
