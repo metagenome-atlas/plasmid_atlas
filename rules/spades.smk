@@ -199,5 +199,7 @@ rule rename_plasmids:
         "{sample}/plasmids/plasmids.fasta.gz"
     conda:
         "../envs/bbmap.yaml"
+    params:
+        prefix="{sample}_circular"
     shell:
-        "rename.sh in={input} out={output} ow=t prefix={wildcards.sample}_plasmid"
+        "rename.sh in={input} out={output} ow=t prefix={params.prefix}"
