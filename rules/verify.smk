@@ -6,8 +6,8 @@ rule downlad_verification_tool:
     output:
         os.path.join(config['database_dir'],"CircularVerify/nbc_hmms.hmm")
     shell:
-        "wget {VERIFY_DATA_URL} -O {database}.gz ; "
-        " gunzip {database}.gz "
+        "wget {VERIFY_DATA_URL} -O {output}.gz ; "
+        " gunzip {output}.gz "
 
 
 rule unzip:
