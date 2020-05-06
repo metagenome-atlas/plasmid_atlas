@@ -4,7 +4,7 @@ VERIFY_DATA_URL ="https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/17904323/
 localrules: unzip,downlad_verification_tool
 rule downlad_verification_tool:
     output:
-        f"{config['database_dir']}/CircularVerify/nbc_hmms.hmm"
+        os.path.join(config['database_dir'],"CircularVerify/nbc_hmms.hmm")
     shell:
         "wget {VERIFY_DATA_URL} -O {database}.gz ; "
         " gunzip {database}.gz "
