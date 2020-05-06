@@ -11,6 +11,8 @@ rule deduplicate:
         input= lambda wc, input: ','.join(input)
     threads:
         config['threads']
+    conda:
+        "../envs/bbmap.yaml"
     shell:
         "dedupe.sh ow=t"
         " cluster=t pickbestrepresentative "
