@@ -13,6 +13,7 @@ validate(config, "config/config.schema.yaml")
 
 include: "rules/spades.smk"
 include: "rules/dereplicate.smk"
+include: "rules/verify.smk"
 
 
 rule all:
