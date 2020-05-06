@@ -29,7 +29,7 @@ rule verify:
         "logs/plasmids/verify.log"
     params:
         script= os.path.join(os.path.dirname(workflow.snakefile),
-                             "scrpts/viralveify/viralverify.py")
+                             "scripts/viralverify/viralverify.py")
     benchmark:
         "logs/benchmark/plasmid/verify.txt"
     output:
