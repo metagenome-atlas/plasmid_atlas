@@ -36,7 +36,6 @@ rule verify:
         outdir = "plasmids/verification"
     benchmark:
         "logs/benchmark/plasmid/verify.txt"
-
     conda:
         "../envs/verify.yaml"
     shell:
@@ -48,7 +47,7 @@ rule verify:
         " -t {threads}"
         " &> {log}"
 
-rules link_output:
+rule link_output:
     input:
         "plasmids/verification/Prediction_results_fasta"
     output:
