@@ -68,3 +68,19 @@ rule link_output:
                 os.symlink(join(input_dir_rel,fasta),output[i])
             else:
                 shell("touch {output_dir}/{fasta}")
+
+
+rule sendsketch:
+    input:
+        "plasmids/verification/circular_plasmids.fasta"
+    output:
+        "plasmids/verification/plasmids_hits.tsv.gz"
+    conda:
+        "../envs/bbmap.yaml"
+    threads:
+        1
+    resources:
+        mem= 1,
+        time=10
+    shell:
+        "sendsketch.sh in={input} out={output} protein -Xmx{resources.mem}g"
