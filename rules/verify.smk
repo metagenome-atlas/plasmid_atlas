@@ -63,8 +63,8 @@ rule link_output:
 
         for i,fasta in enumerate(["plasmids.deduplicated_virus.fasta","plasmids.deduplicated_plasmid.fasta"]):
 
-            if os.path.exists(os.path.join(input[0],fasta)):
+            if os.path.exists(join(input[0],fasta)):
 
-                os.symlink(join(input_dir_rel,fasta),join(output_dir,fasta))
+                os.symlink(join(input_dir_rel,fasta),output[i])
             else:
                 shell("touch {output_dir}/{fasta}")
