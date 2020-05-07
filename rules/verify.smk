@@ -74,7 +74,7 @@ rule sendsketch:
     input:
         "plasmids/verification/circular_plasmids.fasta"
     output:
-        "plasmids/verification/plasmids_hits.tsv.gz"
+        "plasmids/verification/plasmids_hits.tsv"
     conda:
         "../envs/bbmap.yaml"
     threads:
@@ -84,3 +84,4 @@ rule sendsketch:
         time=10
     shell:
         "sendsketch.sh in={input} out={output} protein -Xmx{resources.mem}g"
+        " sequence=sequence format=3"
