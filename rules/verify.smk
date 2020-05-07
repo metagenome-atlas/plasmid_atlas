@@ -41,7 +41,7 @@ rule verify:
     shell:
         "python {params.script} "
         " -f {input.fasta}"
-        " -o {output} "
+        " -o {params.outdir} "
         " --hmm {input.database}"
         " -p"
         " -t {threads}"
